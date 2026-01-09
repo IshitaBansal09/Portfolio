@@ -15,22 +15,20 @@ const EducationSection = () => {
 
   const educationData = [
     {
-      degree: "Secondary School Certificate (SSC)",
-      school: "Natore Textile Institute",
+      degree: "Senior Secondary School Certificate",
+      school: "SVM Himrashmi, Vikasnagar, Shimla",
       mascot: "📘",
-      year: "2019-2021",
-      achievements: ["GPA: 4.89", "Subject: Science"],
-      skills: ["Mathematics", "Physics", "Chemistry", "Biology"],
+      year: "2020-2022",
+      achievements: ["Percentage: 93%", "Subject: Science"],
       description:
         "Focused on core science subjects with emphasis on practical laboratory work and scientific research methodologies.",
     },
     {
-      degree: "Higher Secondary Certificate (HSC)",
-      school: "Dottopara Model Degree College",
+      degree: "Bachelor of Technology(B.Tech)",
+      school: "National Institute of Technology, Hamirpur",
       mascot: "📗",
-      year: "2021-2023",
-      achievements: ["GPA: 4.25", "Subject: Arts"],
-      skills: ["Literature", "Social Studies", "Economics", "History"],
+      year: "2023-2027",
+      achievements: ["GPA: 7.35", "Branch: Electrical Engineering"],
       description:
         "Developed strong analytical and critical thinking skills through comprehensive study of humanities and social sciences.",
     },
@@ -139,17 +137,6 @@ const EducationSection = () => {
                       </div>
                     ))}
                   </div>
-                </div>
-
-                <div className="flex flex-wrap gap-2">
-                  {edu.skills.map((skill, i) => (
-                    <span
-                      key={i}
-                      className="px-2 py-1 text-xs rounded bg-blue-500/10 text-blue-300"
-                    >
-                      {skill}
-                    </span>
-                  ))}
                 </div>
               </div>
             </motion.div>
