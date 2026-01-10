@@ -21,7 +21,7 @@ const EducationSection = () => {
       year: "2020-2022",
       achievements: ["Percentage: 93%", "Subject: Science"],
       description:
-        "Focused on core science subjects with emphasis on practical laboratory work and scientific research methodologies.",
+        "Built a strong foundation in Physics, Chemistry, and Mathematics, with hands-on laboratory work and problem-solving focused on scientific reasoning and analytical thinking.",
     },
     {
       degree: "Bachelor of Technology(B.Tech)",
@@ -30,7 +30,7 @@ const EducationSection = () => {
       year: "2023-2027",
       achievements: ["GPA: 7.35", "Branch: Electrical Engineering"],
       description:
-        "Developed strong analytical and critical thinking skills through comprehensive study of humanities and social sciences.",
+        "Developing a solid engineering foundation through core subjects like electrical systems, programming, and data structures, while building real-world software projects alongside academics.",
     },
   ];
 
