@@ -5,44 +5,34 @@ import PropTypes from "prop-types";
 
 const projects = [
   {
-    title: "Olova! A Lightweight JavaScript Library",
+    title: "SmartLearn Hub — AI-Powered Learning Platform",
     description:
-      "A lightweight JavaScript library for creating beautiful, responsive UI components.",
-    src: "rock.jpg",
-    link: "https://i.postimg.cc/DwgWTfP0/Annotation-2025-03-19-113338.png",
-    color: "#5196fd",
-    githubLink: "https://github.com/olovajs/olova",
-    liveLink: "https://olova.js.org/",
+      "Built an AI-driven learning platform using Next.js and PostgreSQL that dynamically generates personalized course content via Gemini API. Implemented secure authentication with Clerk and optimized data workflows using Drizzle ORM.",
+    src: "smartlearn.jpg",
+    link: "SMARTLEARN_IMAGE_LINK",
+    color: "#4F46E5",
+    githubLink: "https://github.com/IshitaBansal09/CourseAI",
+    liveLink: "https://github.com/IshitaBansal09/CourseAI",
   },
   {
-    title: "A sleek portfolio built with React and Tailwind CSS ",
+    title: "AI Resume Builder",
     description:
-      "A sleek portfolio built with React and Tailwind CSS to showcase your skills, projects, and experience in a modern design.",
-    src: "tree.jpg",
-    link: "https://i.postimg.cc/J75CKyrs/Annotation-2025-04-01-203959.png",
-    color: "#8f89ff",
-    githubLink: "https://github.com/seraprogrammer/portfolio",
-    liveLink: "https://codervai.vercel.app",
+      "Developed a full-stack AI resume builder with real-time content suggestions using React, Strapi, and Clerk authentication. Focused on responsive UX and scalable content generation workflows.",
+    src: "resume.jpg",
+    link: "RESUME_IMAGE_LINK",
+    color: "#10B981",
+    githubLink: "https://github.com/IshitaBansal09/AI-RESUME-BUILDER",
+    liveLink: "https://github.com/IshitaBansal09/AI-RESUME-BUILDER",
   },
   {
-    title: "🚀 CodeWhisperer",
+    title: "RepoDeployer — Cloud Deployment Pipeline",
     description:
-      "🚀 CodeWhisperer A powerful online code editor built with React and Tailwind CSS. Featuring real-time code execution, syntax highlighting, multi-language support, and a sleek UI. Start coding instantly! 💻✨",
-    src: "water.jpg",
-    link: "https://i.postimg.cc/J4jPVFY0/Annotation-2025-04-01-204723.png",
-    color: "#fff",
-    githubLink: "https://github.com/seraprogrammer/codewhisperer",
-    liveLink: "https://codewhisperer.vercel.app/",
-  },
-  {
-    title: "CodeKori 🔥",
-    description:
-      "CodeKori is a powerful online code editor built with React and Tailwind CSS. Featuring real-time code execution, syntax highlighting, multi-language support, and a sleek UI. Start coding instantly! 💻✨",
-    src: "house.jpg",
-    link: "https://i.postimg.cc/cHQr4fpR/Annotation-2025-04-01-205350.png",
-    color: "#ed649e",
-    githubLink: "https://github.com/seraprogrammer/CodeKori",
-    liveLink: "https://codekori.js.org",
+      "Engineered a cloud-native deployment system that clones Git repositories, builds React apps in isolated Docker containers, and deploys via AWS ECS Fargate. Implemented Redis + Socket.IO for real-time log streaming and developer feedback.",
+    src: "repodeployer.jpg",
+    link: "REPO_IMAGE_LINK",
+    color: "#F59E0B",
+    githubLink: "https://github.com/IshitaBansal09/repodeployer",
+    liveLink: "https://github.com/IshitaBansal09/repodeployer",
   },
 ];
 
