@@ -6,7 +6,7 @@ export default function About() {
       <section id="about" className="py-16 md:py-32  text-white bg-[#04081A]">
         <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
           <h2 className="relative z-10 max-w-xl text-4xl font-medium lg:text-5xl text-white">
-            Developer, Problem Solver
+            Full-Stack Engineer building scalable AI-driven web systems
           </h2>
           <div className="grid gap-6 sm:grid-cols-2 md:gap-12 lg:gap-24">
             <div className="relative mb-6 sm:mb-0">
@@ -24,33 +24,19 @@ export default function About() {
             <div className="relative space-y-4">
               <blockquote className="border-l-4 border-gray-300 pl-4">
                 <p className="text-white">
-                  Hello! I’m Ishita Bansal, a Full-Stack Engineer focused on
-                  building scalable, real-world web applications. I work
-                  primarily with React, Next.js, Node.js, and modern cloud
-                  tools, and I enjoy turning complex problems into clean,
-                  efficient solutions.
+                  Hello, I’m Ishita Bansal - a full-stack developer who enjoys building systems that actually run in production, not just demos that look good on a portfolio.
                 </p>
                 <br />
                 <p className="text-white">
-                  I’ve built projects ranging from AI-powered platforms to
-                  cloud-based deployment pipelines, with hands-on experience in
-                  authentication systems, databases, and real-time services. My
-                  work emphasizes performance, reliability, and practical
-                  usability rather than just visuals.
+                  My work focuses on modern React and Next.js frontends backed by Node.js services and cloud-native infrastructure. I’ve built AI-driven platforms, authentication-heavy applications, and automated deployment pipelines that handle real-time processes and containerized workloads.
                 </p>
                 <br />
 
                 <p className="text-white">
-                  I’m actively strengthening my backend and system design skills
-                  while continuing to deepen my understanding of data
-                  structures, algorithms, and core CS fundamentals. I believe in
-                  learning by building and solving problems that actually
-                  matter.
+                  I’m particularly interested in backend engineering, system design, and performance-oriented architecture. Alongside building products, I actively solve data structures and algorithm problems to strengthen my core engineering fundamentals.
                   <br />
                   <br />
-                  Driven by curiosity and consistency, I aim to grow into a
-                  well-rounded software engineer who ships meaningful products
-                  and contributes value through thoughtful engineering.
+                  I care about clarity in code, simplicity in architecture, and shipping solutions that deliver measurable value. My long-term goal is to grow into an engineer who can design and scale reliable systems from the ground up.
                 </p>
               </blockquote>
             </div>
