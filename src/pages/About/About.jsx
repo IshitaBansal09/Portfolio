@@ -1,4 +1,4 @@
-import HeroImg from "@/assets/images/portfolio_photo.jpeg";
+import HeroImg from "@/assets/images/IshitaPhoto.jpeg";
 
 export default function About() {
   return (
@@ -30,7 +30,7 @@ export default function About() {
                   tools, and I enjoy turning complex problems into clean,
                   efficient solutions.
                 </p>
-                <br/>
+                <br />
                 <p className="text-white">
                   I’ve built projects ranging from AI-powered platforms to
                   cloud-based deployment pipelines, with hands-on experience in
@@ -38,7 +38,7 @@ export default function About() {
                   work emphasizes performance, reliability, and practical
                   usability rather than just visuals.
                 </p>
-                <br/>
+                <br />
 
                 <p className="text-white">
                   I’m actively strengthening my backend and system design skills
