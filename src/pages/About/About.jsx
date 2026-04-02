@@ -1,4 +1,4 @@
-import HeroImg from "@/assets/images/IshitaPhoto.jpeg";
+import HeroImg from "@/assets/images/IshitaPhotoCropped.jpeg";
 
 export default function About() {
   return (
