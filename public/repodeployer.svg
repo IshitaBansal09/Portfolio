@@ -1,0 +1,210 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0f0f"/>
+      <stop offset="100%" style="stop-color:#1a1a2e"/>
+    </linearGradient>
+    <linearGradient id="amber" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#F59E0B"/>
+      <stop offset="100%" style="stop-color:#FBBF24"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e1e2e"/>
+      <stop offset="100%" style="stop-color:#16162a"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#F59E0B" flood-opacity="0.2"/>
+    </filter>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#F59E0B" opacity="0.8"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bg)"/>
+
+  <!-- Grid pattern -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-width="0.3" opacity="0.05"/>
+  </pattern>
+  <rect width="1200" height="675" fill="url(#grid)"/>
+
+  <!-- Ambient glow circles -->
+  <circle cx="200" cy="120" r="200" fill="#F59E0B" opacity="0.04"/>
+  <circle cx="1000" cy="550" r="250" fill="#F59E0B" opacity="0.04"/>
+
+  <!-- Top accent bar -->
+  <rect x="0" y="0" width="1200" height="3" fill="url(#amber)"/>
+
+  <!-- Header section -->
+  <text x="60" y="70" font-family="'Courier New', monospace" font-size="13" fill="#F59E0B" opacity="0.7">$ repodeployer --status running</text>
+
+  <!-- Title -->
+  <text x="60" y="130" font-family="Arial, sans-serif" font-size="48" font-weight="800" fill="white">RepoDeployer</text>
+  <rect x="60" y="142" width="280" height="3" fill="url(#amber)" rx="2"/>
+  <text x="60" y="175" font-family="Arial, sans-serif" font-size="16" fill="#9ca3af">Cloud-Native CI/CD · Submit a Git URL, get a live URL</text>
+
+  <!-- ===== PIPELINE FLOW ===== -->
+
+  <!-- Step 1: Git URL -->
+  <rect x="60" y="220" width="185" height="100" rx="12" fill="url(#cardGrad)" stroke="#F59E0B" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="60" y="220" width="185" height="4" rx="2" fill="url(#amber)"/>
+  <!-- Git icon -->
+  <circle cx="97" cy="258" r="14" fill="none" stroke="#F59E0B" stroke-width="2"/>
+  <circle cx="97" cy="258" r="4" fill="#F59E0B"/>
+  <circle cx="110" cy="245" r="3" fill="#F59E0B"/>
+  <circle cx="110" cy="271" r="3" fill="#F59E0B"/>
+  <line x1="100" y1="255" x2="108" y2="248" stroke="#F59E0B" stroke-width="1.5"/>
+  <line x1="100" y1="261" x2="108" y2="268" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="120" y="254" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="white">Git URL</text>
+  <text x="120" y="270" font-family="Arial, sans-serif" font-size="11" fill="#9ca3af">github.com/user/repo</text>
+  <rect x="74" y="290" width="157" height="22" rx="6" fill="#111827"/>
+  <text x="152" y="305" font-family="'Courier New', monospace" font-size="10" fill="#F59E0B" text-anchor="middle">POST /project</text>
+
+  <!-- Arrow 1 -->
+  <line x1="250" y1="270" x2="288" y2="270" stroke="#F59E0B" stroke-width="2" stroke-dasharray="5,3" opacity="0.8" marker-end="url(#arrow)"/>
+
+  <!-- Step 2: API Server -->
+  <rect x="293" y="220" width="185" height="100" rx="12" fill="url(#cardGrad)" stroke="#F59E0B" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="293" y="220" width="185" height="4" rx="2" fill="url(#amber)"/>
+  <!-- Server icon -->
+  <rect x="307" y="243" width="28" height="18" rx="3" fill="none" stroke="#F59E0B" stroke-width="1.5"/>
+  <rect x="307" y="249" width="28" height="6" fill="#F59E0B" opacity="0.2"/>
+  <circle cx="329" cy="252" r="2" fill="#F59E0B"/>
+  <text x="345" y="254" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="white">API Server</text>
+  <text x="345" y="270" font-family="Arial, sans-serif" font-size="11" fill="#9ca3af">port 9000</text>
+  <text x="307" y="284" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">Generates slug · Triggers ECS</text>
+  <rect x="307" y="290" width="157" height="22" rx="6" fill="#111827"/>
+  <text x="385" y="305" font-family="'Courier New', monospace" font-size="10" fill="#F59E0B" text-anchor="middle">brave-red-fox</text>
+
+  <!-- Arrow 2 -->
+  <line x1="483" y1="270" x2="521" y2="270" stroke="#F59E0B" stroke-width="2" stroke-dasharray="5,3" opacity="0.8" marker-end="url(#arrow)"/>
+
+  <!-- Step 3: Build Server / ECS -->
+  <rect x="526" y="220" width="185" height="100" rx="12" fill="url(#cardGrad)" stroke="#F59E0B" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="526" y="220" width="185" height="4" rx="2" fill="url(#amber)"/>
+  <!-- Docker/Container icon -->
+  <rect x="540" y="244" width="26" height="18" rx="2" fill="none" stroke="#F59E0B" stroke-width="1.5"/>
+  <rect x="544" y="240" width="18" height="6" rx="1" fill="none" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="575" y="254" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="white">Build Server</text>
+  <text x="575" y="270" font-family="Arial, sans-serif" font-size="11" fill="#9ca3af">Docker · ECS Fargate</text>
+  <text x="540" y="284" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">clone · npm install · build</text>
+  <rect x="540" y="290" width="157" height="22" rx="6" fill="#111827"/>
+  <text x="618" y="305" font-family="'Courier New', monospace" font-size="10" fill="#F59E0B" text-anchor="middle">dist/ → S3</text>
+
+  <!-- Arrow 3 -->
+  <line x1="716" y1="270" x2="754" y2="270" stroke="#F59E0B" stroke-width="2" stroke-dasharray="5,3" opacity="0.8" marker-end="url(#arrow)"/>
+
+  <!-- Step 4: S3 -->
+  <rect x="759" y="220" width="185" height="100" rx="12" fill="url(#cardGrad)" stroke="#F59E0B" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="759" y="220" width="185" height="4" rx="2" fill="url(#amber)"/>
+  <!-- S3/Storage icon -->
+  <ellipse cx="786" cy="248" rx="14" ry="6" fill="none" stroke="#F59E0B" stroke-width="1.5"/>
+  <line x1="772" y1="248" x2="772" y2="262" stroke="#F59E0B" stroke-width="1.5"/>
+  <line x1="800" y1="248" x2="800" y2="262" stroke="#F59E0B" stroke-width="1.5"/>
+  <ellipse cx="786" cy="262" rx="14" ry="6" fill="none" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="810" y="254" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="white">AWS S3</text>
+  <text x="810" y="270" font-family="Arial, sans-serif" font-size="11" fill="#9ca3af">repo-deployer bucket</text>
+  <text x="773" y="284" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">__outputs/{slug}/</text>
+  <rect x="773" y="290" width="157" height="22" rx="6" fill="#111827"/>
+  <text x="851" y="305" font-family="'Courier New', monospace" font-size="10" fill="#F59E0B" text-anchor="middle">static files stored</text>
+
+  <!-- Arrow 4 -->
+  <line x1="949" y1="270" x2="987" y2="270" stroke="#F59E0B" stroke-width="2" stroke-dasharray="5,3" opacity="0.8" marker-end="url(#arrow)"/>
+
+  <!-- Step 5: Proxy / Live -->
+  <rect x="992" y="220" width="185" height="100" rx="12" fill="url(#cardGrad)" stroke="#F59E0B" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="992" y="220" width="185" height="4" rx="2" fill="url(#amber)"/>
+  <!-- Globe icon -->
+  <circle cx="1015" cy="258" r="13" fill="none" stroke="#F59E0B" stroke-width="1.5"/>
+  <ellipse cx="1015" cy="258" rx="6" ry="13" fill="none" stroke="#F59E0B" stroke-width="1"/>
+  <line x1="1002" y1="258" x2="1028" y2="258" stroke="#F59E0B" stroke-width="1"/>
+  <text x="1035" y="254" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="white">Live Site</text>
+  <text x="1035" y="270" font-family="Arial, sans-serif" font-size="11" fill="#9ca3af">S3 Reverse Proxy</text>
+  <text x="1006" y="284" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">{slug}.localhost:8000</text>
+  <rect x="1006" y="290" width="157" height="22" rx="6" fill="#111827"/>
+  <text x="1084" y="305" font-family="'Courier New', monospace" font-size="10" fill="#22c55e" text-anchor="middle">● DEPLOYED</text>
+
+  <!-- ===== TERMINAL BLOCK ===== -->
+  <rect x="60" y="360" width="540" height="255" rx="12" fill="#0d0d0d" stroke="#2d2d2d" stroke-width="1.5"/>
+  <!-- Terminal title bar -->
+  <rect x="60" y="360" width="540" height="36" rx="12" fill="#1a1a1a"/>
+  <rect x="60" y="384" width="540" height="12" fill="#1a1a1a"/>
+  <circle cx="88" cy="378" r="6" fill="#ff5f57"/>
+  <circle cx="108" cy="378" r="6" fill="#febc2e"/>
+  <circle cx="128" cy="378" r="6" fill="#28c840"/>
+  <text x="300" y="382" font-family="Arial, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">terminal</text>
+
+  <!-- Terminal content -->
+  <text x="80" y="418" font-family="'Courier New', monospace" font-size="12" fill="#6b7280">$ curl -X POST localhost:9000/project \</text>
+  <text x="80" y="436" font-family="'Courier New', monospace" font-size="12" fill="#6b7280">    -d '{"gitURL": "https://github.com/user/app"}'</text>
+  <text x="80" y="462" font-family="'Courier New', monospace" font-size="12" fill="#9ca3af">{</text>
+  <text x="80" y="480" font-family="'Courier New', monospace" font-size="12" fill="#9ca3af">  "status": <tspan fill="#F59E0B">"queued"</tspan>,</text>
+  <text x="80" y="498" font-family="'Courier New', monospace" font-size="12" fill="#9ca3af">  "data": {</text>
+  <text x="80" y="516" font-family="'Courier New', monospace" font-size="12" fill="#9ca3af">    "projectSlug": <tspan fill="#F59E0B">"brave-red-fox"</tspan>,</text>
+  <text x="80" y="534" font-family="'Courier New', monospace" font-size="12" fill="#9ca3af">    "url": <tspan fill="#22c55e">"http://brave-red-fox.localhost:8000"</tspan></text>
+  <text x="80" y="552" font-family="'Courier New', monospace" font-size="12" fill="#9ca3af">  }</text>
+  <text x="80" y="570" font-family="'Courier New', monospace" font-size="12" fill="#9ca3af">}</text>
+  <!-- cursor -->
+  <rect x="80" y="583" width="8" height="14" fill="#F59E0B" opacity="0.8"/>
+
+  <!-- ===== TECH STACK PANEL ===== -->
+  <rect x="630" y="360" width="547" height="255" rx="12" fill="url(#cardGrad)" stroke="#2d2d2d" stroke-width="1.5"/>
+  <text x="650" y="393" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#F59E0B">Tech Stack</text>
+  <rect x="650" y="400" width="507" height="1" fill="#2d2d2d"/>
+
+  <!-- Stack rows -->
+  <!-- Row 1 -->
+  <rect x="650" y="415" width="140" height="34" rx="8" fill="#111827" stroke="#374151" stroke-width="1"/>
+  <text x="720" y="437" font-family="Arial, sans-serif" font-size="12" fill="#e5e7eb" text-anchor="middle">Node.js + Express</text>
+
+  <rect x="800" y="415" width="120" height="34" rx="8" fill="#111827" stroke="#374151" stroke-width="1"/>
+  <text x="860" y="437" font-family="Arial, sans-serif" font-size="12" fill="#e5e7eb" text-anchor="middle">AWS ECS Fargate</text>
+
+  <rect x="930" y="415" width="100" height="34" rx="8" fill="#111827" stroke="#374151" stroke-width="1"/>
+  <text x="980" y="437" font-family="Arial, sans-serif" font-size="12" fill="#e5e7eb" text-anchor="middle">AWS S3</text>
+
+  <rect x="1040" y="415" width="110" height="34" rx="8" fill="#111827" stroke="#374151" stroke-width="1"/>
+  <text x="1095" y="437" font-family="Arial, sans-serif" font-size="12" fill="#e5e7eb" text-anchor="middle">Docker</text>
+
+  <!-- Row 2 -->
+  <rect x="650" y="460" width="100" height="34" rx="8" fill="#111827" stroke="#374151" stroke-width="1"/>
+  <text x="700" y="482" font-family="Arial, sans-serif" font-size="12" fill="#e5e7eb" text-anchor="middle">http-proxy</text>
+
+  <rect x="760" y="460" width="130" height="34" rx="8" fill="#111827" stroke="#374151" stroke-width="1"/>
+  <text x="825" y="482" font-family="Arial, sans-serif" font-size="12" fill="#e5e7eb" text-anchor="middle">AWS SDK v3</text>
+
+  <rect x="900" y="460" width="120" height="34" rx="8" fill="#111827" stroke="#374151" stroke-width="1"/>
+  <text x="960" y="482" font-family="Arial, sans-serif" font-size="12" fill="#e5e7eb" text-anchor="middle">mime-types</text>
+
+  <rect x="1030" y="460" width="120" height="34" rx="8" fill="#111827" stroke="#374151" stroke-width="1"/>
+  <text x="1090" y="482" font-family="Arial, sans-serif" font-size="12" fill="#e5e7eb" text-anchor="middle">random-word-slugs</text>
+
+  <!-- Divider -->
+  <rect x="650" y="510" width="507" height="1" fill="#2d2d2d"/>
+
+  <!-- Stats row -->
+  <text x="650" y="535" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#F59E0B">Architecture</text>
+
+  <rect x="650" y="548" width="150" height="50" rx="8" fill="#111827"/>
+  <text x="725" y="568" font-family="Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">Services</text>
+  <text x="725" y="589" font-family="Arial, sans-serif" font-size="22" font-weight="800" fill="white" text-anchor="middle">3</text>
+
+  <rect x="815" y="548" width="150" height="50" rx="8" fill="#111827"/>
+  <text x="890" y="568" font-family="Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">Cloud Provider</text>
+  <text x="890" y="589" font-family="Arial, sans-serif" font-size="16" font-weight="800" fill="white" text-anchor="middle">AWS</text>
+
+  <rect x="980" y="548" width="177" height="50" rx="8" fill="#111827"/>
+  <text x="1068" y="568" font-family="Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">Deploy Time</text>
+  <text x="1068" y="589" font-family="Arial, sans-serif" font-size="16" font-weight="800" fill="white" text-anchor="middle">1-3 min</text>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="672" width="1200" height="3" fill="url(#amber)" opacity="0.5"/>
+</svg>
