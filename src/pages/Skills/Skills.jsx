@@ -1,186 +1,173 @@
-import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { motion } from "framer-motion";
 import IconCloudDemo from "@/components/globe";
-import { Code2, Server, Database, Layout, Cpu, Cloud } from "lucide-react";
+import { Code2, Server, Database, Layout, Cloud, Cpu } from "lucide-react";
 import {
-  FaReact,
-  FaNodeJs,
-  FaPython,
-  FaDocker,
-  FaGitAlt,
-  FaLinux,
-  FaFigma,
-  FaAws,
+  FaReact, FaNodeJs, FaDocker, FaAws, FaGitAlt, FaPython,
 } from "react-icons/fa";
 import {
-  SiNextdotjs,
-  SiTypescript,
-  SiTailwindcss,
-  SiPostgresql,
-  SiMongodb,
-  SiGraphql,
-  SiJest,
-  SiWebpack,
-  SiRedux,
-  SiFirebase,
-  SiVercel,
-  SiVite,
+  SiNextdotjs, SiTailwindcss, SiMongodb, SiPostgresql, SiExpress,
+  SiMysql, SiVite, SiGithub,
 } from "react-icons/si";
 import { TbBrandVscode } from "react-icons/tb";
-import { BsFileEarmarkCode, BsGrid1X2 } from "react-icons/bs";
-import { MdAnimation } from "react-icons/md";
-import { FcWorkflow } from "react-icons/fc";
 
-const SkillCard = ({ icon: Icon, title, skills, color }) => (
-  <Card className="group relative overflow-hidden bg-gray-900/80 border-gray-700 hover:scale-[1.02] transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/20">
-    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[rgba(100,100,255,0.1)] to-transparent group-hover:via-[rgba(100,100,255,0.2)] animate-shimmer"></div>
-    <CardContent className="p-6 relative z-10">
-      <div className="flex items-center gap-4 mb-6">
-        <div
-          className={`p-3 rounded-xl bg-gray-800/50 ${color} group-hover:scale-110 transition-transform duration-300`}
-        >
-          <Icon className="w-8 h-8" />
-        </div>
-        <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
-          {title}
-        </h3>
-      </div>
-      <div className="flex flex-wrap gap-2">
-        {skills.map((skill, index) => (
-          <Badge
-            key={index}
-            variant="outline"
-            className="group/badge relative bg-gray-800/50 hover:bg-gray-700/80 text-gray-100 border-gray-600 flex items-center gap-2 py-2 px-3 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/20"
-          >
-            <span className="transform group-hover/badge:scale-110 transition-transform duration-300">
-              {skill.icon}
-            </span>
-            <span className="font-medium">{skill.name}</span>
-          </Badge>
-        ))}
-      </div>
-    </CardContent>
-  </Card>
-);
+const categories = [
+  {
+    icon: Code2,
+    title: "Languages",
+    color: "text-blue-400",
+    border: "hover:border-blue-500/40",
+    glow: "group-hover:shadow-blue-500/10",
+    skills: [
+      { name: "C++",        icon: <Code2 className="w-4 h-4 text-blue-400" /> },
+      { name: "JavaScript", icon: <span className="text-yellow-400 font-bold text-sm">JS</span> },
+    ],
+  },
+  {
+    icon: Layout,
+    title: "Frontend",
+    color: "text-purple-400",
+    border: "hover:border-purple-500/40",
+    glow: "group-hover:shadow-purple-500/10",
+    skills: [
+      { name: "React.js",    icon: <FaReact className="w-4 h-4 text-cyan-400" /> },
+      { name: "Next.js",     icon: <SiNextdotjs className="w-4 h-4 text-white" /> },
+      { name: "Tailwind CSS",icon: <SiTailwindcss className="w-4 h-4 text-sky-400" /> },
+      { name: "ShadCN UI",   icon: <span className="text-white font-bold text-sm">SC</span> },
+    ],
+  },
+  {
+    icon: Server,
+    title: "Backend",
+    color: "text-emerald-400",
+    border: "hover:border-emerald-500/40",
+    glow: "group-hover:shadow-emerald-500/10",
+    skills: [
+      { name: "Node.js",    icon: <FaNodeJs className="w-4 h-4 text-green-400" /> },
+      { name: "Express.js", icon: <SiExpress className="w-4 h-4 text-gray-300" /> },
+      { name: "REST APIs",  icon: <span className="text-gray-300 font-bold text-xs">API</span> },
+      { name: "Auth Systems",icon: <span className="text-yellow-400 font-bold text-xs">🔐</span> },
+    ],
+  },
+  {
+    icon: Database,
+    title: "Databases",
+    color: "text-cyan-400",
+    border: "hover:border-cyan-500/40",
+    glow: "group-hover:shadow-cyan-500/10",
+    skills: [
+      { name: "PostgreSQL", icon: <SiPostgresql className="w-4 h-4 text-blue-400" /> },
+      { name: "MongoDB",    icon: <SiMongodb className="w-4 h-4 text-green-500" /> },
+      { name: "MySQL",      icon: <SiMysql className="w-4 h-4 text-orange-400" /> },
+    ],
+  },
+  {
+    icon: Cloud,
+    title: "Cloud & DevOps",
+    color: "text-orange-400",
+    border: "hover:border-orange-500/40",
+    glow: "group-hover:shadow-orange-500/10",
+    skills: [
+      { name: "AWS S3",   icon: <FaAws className="w-4 h-4 text-orange-400" /> },
+      { name: "AWS ECS",  icon: <FaAws className="w-4 h-4 text-orange-400" /> },
+      { name: "AWS ECR",  icon: <FaAws className="w-4 h-4 text-orange-400" /> },
+      { name: "Docker",   icon: <FaDocker className="w-4 h-4 text-sky-400" /> },
+    ],
+  },
+  {
+    icon: Cpu,
+    title: "Tools",
+    color: "text-pink-400",
+    border: "hover:border-pink-500/40",
+    glow: "group-hover:shadow-pink-500/10",
+    skills: [
+      { name: "Git",     icon: <FaGitAlt className="w-4 h-4 text-orange-500" /> },
+      { name: "GitHub",  icon: <SiGithub className="w-4 h-4 text-gray-300" /> },
+      { name: "VS Code", icon: <TbBrandVscode className="w-4 h-4 text-blue-400" /> },
+      { name: "Vite",    icon: <SiVite className="w-4 h-4 text-purple-400" /> },
+      { name: "Postman", icon: <span className="text-orange-400 font-bold text-xs">PM</span> },
+    ],
+  },
+];
 
-const SkillsSection = () => {
-  const skillCategories = [
-    {
-      icon: Code2,
-      title: "Programming",
-      color: "text-blue-400",
-      skills: [
-        { name: "C++" },
-        { name: "JavaScript" },
-      ],
-    },
-    {
-      icon: Layout,
-      title: "Frontend",
-      color: "text-purple-400",
-      skills: [
-        { name: "React.js" },
-        { name: "Next.js" },
-        { name: "Tailwind CSS" },
-        { name: "ShadCN UI" },
-      ],
-    },
-    {
-      icon: Server,
-      title: "Backend",
-      color: "text-green-400",
-      skills: [
-        { name: "Node.js" },
-        { name: "Express.js" },
-        { name: "REST APIs" },
-        { name: "Authentication Systems" },
-      ],
-    },
-    {
-      icon: Database,
-      title: "Databases",
-      color: "text-cyan-400",
-      skills: [
-        { name: "PostgreSQL" },
-        { name: "MongoDB" },
-        { name: "MySQL" },
-      ],
-    },
-    {
-      icon: Cloud,
-      title: "Cloud & DevOps",
-      color: "text-orange-400",
-      skills: [
-        { name: "AWS S3" },
-        { name: "AWS ECS" },
-        { name: "AWS ECR" },
-        { name: "Docker" },
-      ],
-    },
-    {
-      icon: Cpu,
-      title: "Tools",
-      color: "text-pink-400",
-      skills: [
-        { name: "Git" },
-        { name: "GitHub" },
-        { name: "VS Code" },
-        { name: "Postman" },
-        { name: "Vite" },
-      ],
-    },
-  ];
-
-  return (
-    <main className="pt-15 lg:pt-0 text-white min-h-screen bg-[#04081A] relative">
-      {/* Grid Background */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-20 pointer-events-none"></div>
-
-      <section className="container mx-auto px-4 py-11 relative z-10">
-        <div className="flex justify-center items-center ">
-          <IconCloudDemo />
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {skillCategories.map((category, index) => (
-            <SkillCard
-              key={index}
-              icon={category.icon}
-              title={category.title}
-              skills={category.skills}
-              color={category.color}
-            />
-          ))}
-        </div>
-      </section>
-      <style jsx>{`
-        @keyframes shimmer {
-          0% {
-            transform: translateX(-100%);
-          }
-          100% {
-            transform: translateX(100%);
-          }
-        }
-        .animate-shimmer {
-          animation: shimmer 2s infinite;
-        }
-        .bg-grid-pattern {
-          background-image: linear-gradient(
-              to right,
-              rgba(100, 100, 255, 0.1) 1px,
-              transparent 1px
-            ),
-            linear-gradient(
-              to bottom,
-              rgba(100, 100, 255, 0.1) 1px,
-              transparent 1px
-            );
-          background-size: 30px 30px;
-        }
-      `}</style>
-    </main>
-  );
+const fadeUp = {
+  hidden: { opacity: 0, y: 25 },
+  visible: (i) => ({
+    opacity: 1, y: 0,
+    transition: { duration: 0.5, delay: i * 0.07, ease: "easeOut" },
+  }),
 };
 
-export default SkillsSection;
+export default function Skills() {
+  return (
+    <section className="py-28 bg-[#0a0f1e] text-white relative overflow-hidden">
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(96,165,250,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(96,165,250,0.03)_1px,transparent_1px)] bg-[size:48px_48px] pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
+
+        {/* Section header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-14"
+        >
+          <span className="inline-block text-sm font-medium text-teal-400 bg-teal-400/10 border border-teal-400/20 px-4 py-1.5 rounded-full mb-5">
+            Tech Stack
+          </span>
+          <h2 className="text-4xl md:text-5xl font-bold text-white">
+            Skills &{" "}
+            <span className="gradient-text">Technologies</span>
+          </h2>
+          <p className="text-gray-400 mt-4 max-w-xl mx-auto">
+            Tools and technologies I use to bring ideas to life.
+          </p>
+        </motion.div>
+
+        {/* Icon cloud */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="flex justify-center mb-14"
+        >
+          <IconCloudDemo />
+        </motion.div>
+
+        {/* Skill grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {categories.map((cat, i) => (
+            <motion.div
+              key={cat.title}
+              variants={fadeUp}
+              custom={i}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className={`group bg-gray-900/60 border border-gray-800 rounded-2xl p-6 hover:bg-gray-900/80 transition-all duration-300 hover:shadow-xl ${cat.border} ${cat.glow}`}
+            >
+              <div className="flex items-center gap-3 mb-5">
+                <div className="p-2.5 rounded-xl bg-gray-800/80 group-hover:scale-110 transition-transform duration-300">
+                  <cat.icon className={`w-5 h-5 ${cat.color}`} />
+                </div>
+                <h3 className="text-lg font-semibold text-white">{cat.title}</h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {cat.skills.map((skill) => (
+                  <span
+                    key={skill.name}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gray-800/80 border border-gray-700/60 text-gray-300 text-sm hover:border-gray-500 hover:text-white transition-all duration-200"
+                  >
+                    {skill.icon}
+                    {skill.name}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
